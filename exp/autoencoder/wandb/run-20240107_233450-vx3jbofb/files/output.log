@@ -1,0 +1,298 @@
+{'train': True}
+{'train': False}
+{'name': 'AdamW', 'args': {'lr': 0.001, 'betas': [0.9, 0.99], 'eps': 1e-15, 'weight_decay': 1e-05}}
+Epoch 0:   0%|                               | 0/1875 [00:00<?, ?it/s]
+  | Name  | Type      | Params
+------------------------------------
+0 | model | SimpleNet | 101 K
+------------------------------------
+101 K     Trainable params
+0         Non-trainable params
+101 K     Total params
+0.407     Total estimated model params size (MB)
+/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:436: Consider setting `persistent_workers=True` in 'train_dataloader' to speed up the dataloader worker initialization.
+
+Epoch 0:   3%|    | 48/1875 [00:05<03:19,  9.17it/s, loss_step=0.0678]
+/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+
+
+
+
+
+Epoch 0:  53%|█ | 1000/1875 [00:15<00:13, 62.95it/s, loss_step=0.0474]
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 1:  53%|▌| 1000/1875 [00:15<00:13, 63.36it/s, loss_step=0.0414,
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 2:  53%|▌| 1000/1875 [00:15<00:13, 65.69it/s, loss_step=0.0461,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 3:  53%|▌| 1000/1875 [00:15<00:13, 66.49it/s, loss_step=0.038, v
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 4:  53%|▌| 1000/1875 [00:15<00:13, 65.61it/s, loss_step=0.0389,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 5:  53%|▌| 1000/1875 [00:15<00:13, 65.04it/s, loss_step=0.0387,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 6:  53%|▌| 1000/1875 [00:15<00:13, 65.06it/s, loss_step=0.0427,
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 7:  53%|▌| 1000/1875 [00:15<00:13, 65.25it/s, loss_step=0.0376,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 8:  53%|▌| 1000/1875 [00:15<00:13, 65.68it/s, loss_step=0.0407,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 9:  53%|▌| 1000/1875 [00:15<00:13, 65.42it/s, loss_step=0.0433,
+
+
+
+
+
+
+
+
+
+
+
+Epoch 10:  53%|▌| 1000/1875 [00:15<00:13, 66.58it/s, loss_step=0.0402,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 11:  53%|▌| 1000/1875 [00:15<00:13, 65.64it/s, loss_step=0.0355,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 12:  53%|▌| 1000/1875 [00:14<00:12, 67.34it/s, loss_step=0.0392,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 13:  53%|▌| 1000/1875 [00:15<00:13, 66.44it/s, loss_step=0.0383,
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 14:  53%|▌| 1000/1875 [00:16<00:14, 62.27it/s, loss_step=0.0332,
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 15:  53%|▌| 1000/1875 [00:15<00:13, 62.80it/s, loss_step=0.0389,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 16:  53%|▌| 1000/1875 [00:16<00:14, 61.93it/s, loss_step=0.040,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 17:  53%|▌| 1000/1875 [00:15<00:13, 64.81it/s, loss_step=0.0435,
+
+
+
+
+
+
+
+
+
+
+
+Epoch 18:  53%|▌| 1000/1875 [00:18<00:16, 53.41it/s, loss_step=0.0341,
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 19:  53%|▌| 1000/1875 [00:16<00:14, 61.66it/s, loss_step=0.0332,
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 20:  53%|▌| 1000/1875 [00:16<00:14, 61.58it/s, loss_step=0.0385,
+
+
+
+
+
+
+
+
+
+
+Epoch 21:  30%|▎| 560/1875 [00:10<00:25, 52.31it/s, loss_step=0.0347,
+
+Epoch 21:  33%|▎| 625/1875 [00:11<00:22, 54.36it/s, loss_step=0.0304,

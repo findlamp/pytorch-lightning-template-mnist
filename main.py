@@ -42,9 +42,6 @@ def load_callbacks(config):
                 **config.checkpoint
             ),
             LearningRateMonitor(logging_interval='step'),
-            CodeSnapshotCallback(
-                config.code_dir, use_version=False
-            ),
             ConfigSnapshotCallback(
                 config, config.config_dir, use_version=False
             ),
@@ -133,9 +130,8 @@ if __name__ == '__main__':
         config.trial_name =  config.cmd_args.load_ver
      
     config.exp_dir = config.get('exp_dir') or os.path.join(args.exp_dir, config.name)
-    config.save_dir = config.get('save_dir') or os.path.join(config.exp_dir, config.trial_name, 'save')
+    config.model.save_dir = config.get('save_dir') or os.path.join(config.exp_dir, config.trial_name, 'save')
     config.ckpt_dir = config.get('ckpt_dir') or os.path.join(config.exp_dir, config.trial_name, 'ckpt')
-    config.code_dir = config.get('code_dir') or os.path.join(config.exp_dir, config.trial_name, 'code')
     config.config_dir = config.get('config_dir') or os.path.join(config.exp_dir, config.trial_name, 'config')
     
     main(config)

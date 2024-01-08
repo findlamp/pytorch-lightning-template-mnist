@@ -1,0 +1,65 @@
+name: autoencoder
+tag: ''
+seed: 42
+dataset:
+  name: standard_data
+  scene: none
+  root_dir: MNIST
+  train_split: train
+  val_split: val
+  test_split: test
+  num_workers: 8
+  batch_size: 32
+model:
+  name: simple_net
+  in_channel: 3
+  out_channel: 10
+  hid: 128
+  layer_num: 5
+  optimizer:
+    name: AdamW
+    args:
+      lr: 0.001
+      betas:
+      - 0.9
+      - 0.99
+      eps: 1.0e-15
+      weight_decay: 1.0e-05
+  scheduler:
+    name: step
+    lr_decay_rate: 0.5
+    lr_decay_steps: 20
+    lr_decay_min_lr: 1.0e-05
+  loss: mse
+  save_dir: ./exp/autoencoder/@20240107-231053/save
+checkpoint:
+  save_top_k: 5
+  every_n_train_steps: 2000
+  monitor: val_loss
+  save_last: true
+trainer:
+  max_steps: 40000
+  log_every_n_steps: 50
+  num_sanity_val_steps: 0
+  val_check_interval: 1000
+  limit_train_batches: 1.0
+  limit_val_batches: 4
+  enable_progress_bar: true
+  precision: 16
+  accumulate_grad_batches: 1
+  accelerator: mps
+cmd_args:
+  load_best: false
+  load_dir: null
+  load_ver: null
+  load_v_num: null
+  log_dir: lightning_logs
+  trial_name: test
+  config: configs/mnist.yaml
+  exp_dir: ./exp
+  max_epochs: 100
+trial_name: '@20240107-231053'
+exp_dir: ./exp/autoencoder
+ckpt_dir: ./exp/autoencoder/@20240107-231053/ckpt
+code_dir: ./exp/autoencoder/@20240107-231053/code
+config_dir: ./exp/autoencoder/@20240107-231053/config

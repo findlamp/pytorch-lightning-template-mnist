@@ -1,0 +1,67 @@
+{'train': True}
+{'train': False}
+{'name': 'AdamW', 'args': {'lr': 0.001, 'betas': [0.9, 0.99], 'eps': 1e-15, 'weight_decay': 1e-05}}
+Epoch 0:   0%|                               | 0/1875 [00:00<?, ?it/s]
+  | Name  | Type      | Params
+------------------------------------
+0 | model | SimpleNet | 101 K
+------------------------------------
+101 K     Trainable params
+0         Non-trainable params
+101 K     Total params
+0.407     Total estimated model params size (MB)
+/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:436: Consider setting `persistent_workers=True` in 'train_dataloader' to speed up the dataloader worker initialization.
+
+Epoch 0:   7%|▏  | 127/1875 [00:05<01:17, 22.59it/s, loss_step=0.0542]
+/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/torch/amp/autocast_mode.py:250: UserWarning: User provided device_type of 'cuda', but CUDA is not available. Disabling
+
+
+
+
+Epoch 0:  53%|█ | 1000/1875 [00:15<00:13, 65.17it/s, loss_step=0.0474]
+Validation: |                                   | 0/? [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/main.py", line 141, in <module>
+    main(config)
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/main.py", line 87, in main
+    trainer.fit(model, data_module)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/call.py", line 44, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/trainer.py", line 989, in _run
+    results = self._run_stage()
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/trainer.py", line 1035, in _run_stage
+    self.fit_loop.run()
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/fit_loop.py", line 202, in run
+    self.advance()
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/fit_loop.py", line 359, in advance
+    self.epoch_loop.run(self._data_fetcher)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 137, in run
+    self.on_advance_end(data_fetcher)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/training_epoch_loop.py", line 285, in on_advance_end
+    self.val_loop.run()
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/utilities.py", line 182, in _decorator
+    return loop_run(self, *args, **kwargs)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 134, in run
+    self._evaluation_step(batch, batch_idx, dataloader_idx, dataloader_iter)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/loops/evaluation_loop.py", line 391, in _evaluation_step
+    output = call._call_strategy_hook(trainer, hook_name, *step_args)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/trainer/call.py", line 309, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/pytorch_lightning/strategies/strategy.py", line 403, in validation_step
+    return self.lightning_module.validation_step(*args, **kwargs)
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/model/model_interface.py", line 54, in validation_step
+    self.render_img(x[0], out[0], H, W)
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/model/model_interface.py", line 130, in render_img
+    self.save_image_grid(f"it{self.global_step}.png", [
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/utils/mixins.py", line 145, in save_image_grid
+    cv2.imwrite(self.get_save_path(filename), img)
+  File "/Users/gaoming/Documents/Learning/project/diffusion_depth_estimation/pytorch-lightning-template-mnist/utils/mixins.py", line 34, in get_save_path
+    save_path = os.path.join(self.save_dir, filename)
+  File "/Users/gaoming/miniconda3/envs/pointnerf/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1695, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+
+Validation DataLoader 0:   0%|                  | 0/4 [00:00<?, ?it/s]
